@@ -4,10 +4,16 @@
 
 	<groupId>pl.koziolekweb.loggerio</groupId>
 	<artifactId>loggerio</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
- 
+	<scm>
+		<url>https://github.com/Koziolek/loggerio</url>
+		<connection>scm:git:https://github.com/Koziolek/loggerio.git</connection>
+		<developerConnection>scm:git:https://github.com/Koziolek/loggerio.git</developerConnection>
+	  	<tag>HEAD</tag>
+  </scm>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
@@ -44,6 +50,49 @@
 						<groupId>org.junit.vintage</groupId>
 						<artifactId>junit-vintage-engine</artifactId>
 						<version>5.2.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.10.0</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.codehaus.plexus</groupId>
+						<artifactId>plexus-utils</artifactId>
+						<version>2.1</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.2</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<tag>${project.name}-${project.version}</tag>
+					<connectionType>connection</connectionType>
+				</configuration>
+				<executions>
+					<execution>
+						<id>tag</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>tag</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.shared</groupId>
+						<artifactId>maven-invoker</artifactId>
+						<version>2.2</version>
 					</dependency>
 				</dependencies>
 			</plugin>
