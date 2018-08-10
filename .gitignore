@@ -39,3 +39,5 @@ ebin/
 /.fetch
 *.ez
 
+pom.xml.releaseBackup
+release.properties
