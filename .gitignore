@@ -1,0 +1,41 @@
+# Created by .ignore support plugin (hsz.mobi)
+~*.pptx
+
+build/
+.gradle/
+gradle/
+.project
+.settings/
+.classpath
+target/
+test-output/
+*.zip
+*.odp
+*.pdf
+*.ipr
+*.iws
+*.iml
+.idea/
+VAADIN/
+
+### Erlang template
+.eunit
+deps
+*.o
+*.beam
+*.plt
+erl_crash.dump
+ebin/*.beam
+rel/example_project
+.concrete/DEV_MODE
+.rebar
+ebin/
+
+### Elixir template
+/_build
+/cover
+/deps
+/doc
+/.fetch
+*.ez
+
